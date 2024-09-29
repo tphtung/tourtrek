@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="public/css/admin.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Content omitted for brevity -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-chart-line"></i> Admin Dashboard</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="#">Dashboard</a>
+                    <a class="nav-item nav-link" href="#">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Quản Lý Tổng Quan</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-users icon-box"></i>Người Dùng</h5>
+                        <p class="card-text-user">Tổng số người dùng: 1,234</p>
+                        <button id="showUserDetailsBtn" class="btn btn-primary btn-modal"
+                            data-target="#userDetailsModal">Xem Chi Tiết</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-newspaper icon-box"></i>Bài Viết</h5>
+                        <p class="card-text">Bài viết đang chờ duyệt: 45</p>
+                        <button class="btn btn-primary btn-modal" data-target="#postDetailsModal">Xem Chi Tiết</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-exclamation-triangle icon-box"></i>Vi Phạm</h5>
+                        <p class="card-text">Báo cáo vi phạm mới: 5</p>
+                        <button class="btn btn-primary btn-modal" data-target="#reportDetailsModal">Xem Chi
+                            Tiết</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-calendar-alt icon-box"></i>Lịch Trình</h5>
+                        <p class="card-text">Các sự kiện sắp tới: 12</p>
+                        <button class="btn btn-primary btn-modal" data-target="#scheduleDetailsModal" id="showScheduleDetailsBtn">Xem Chi
+                            Tiết</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <h2 class="mb-4">Yêu Cầu Nâng Cấp Tài Khoản</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Danh sách yêu cầu nâng cấp tài khoản</h5>
+                <!-- <p class="card-text">Chuyên môn: Phát triển web</p> -->
+                <button class="btn btn-primary btn-modal" data-target="#approveModal">Xem và Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Admin Dashboard © 2024
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-backdrop"></div>
+
+    <!-- Modal for User Details -->
+    <div class="modal-content" id="userDetailsModal">
+        <i class="fas fa-times btn-back btn-detail" onclick="toggleModal('userDetailsModal', false);"></i>
+        <div class="modal-body">
+            <h5>Chi Tiết Người Dùng</h5>
+            <div id="userDetailsList" class="list-group">
+                <!-- Các mục danh sách sẽ được thêm vào đây từ JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Post Details -->
+    <div class="modal-content" id="postDetailsModal">
+        <i class="fas fa-times btn-back btn-detail" onclick="toggleModal('postDetailsModal', false);"></i>
+        <div class="modal-body">
+            <h5>Chi Tiết Bài Viết</h5>
+            <div class="list-group">
+                <!-- Lặp qua từng bài viết và tạo một mục danh sách cho mỗi bài viết -->
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">bài viết 7</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viêt 7</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">bài viết 6</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viêt 6</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">bài viết 5</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viết 5</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Bài viết 4</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viết 4</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Bài viết 3</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viết 3</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Bài viết 2</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viết 2</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Bài viết 1</h5>
+                        <small>Ngày tạo: 05-08-2024</small>
+                    </div>
+                    <p class="mb-1">Bài viết 1</p>
+                </a>
+                <!-- Thêm nhiều mục tương tự cho các bài viết khác -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-content" id="reportDetailsModal">
+        <i class="fas fa-times btn-back btn-detail" onclick="toggleModal('reportDetailsModal', false);"></i>
+        <div class="modal-body">
+            <h5>Chi Tiết Vi Phạm</h5>
+            <div class="list-group">
+                <!-- Lặp qua từng báo cáo vi phạm và tạo một mục danh sách -->
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Mô tả vi phạm 1</h5>
+                        <small>Ngày báo cáo: 2020-01-01 12:00</small>
+                    </div>
+                </a>
+                <!-- Thêm nhiều mục tương tự cho các vi phạm khác -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Schedule Details -->
+    <div class="modal-content" id="scheduleDetailsModal">
+        <i class="fas fa-times btn-back btn-detail" onclick="toggleModal('scheduleDetailsModal', false);"></i>
+        <div class="modal-header">
+            <h5 class="modal-title">Chi Tiết Lịch Trình</h5>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Du lịch Hà Tiên</h5>
+                        <small>Tên: HTung142857</small>
+                        <small>Tên: TTung</small>
+                    </div>
+                    <!-- <p class="mb-1">Nội dung ngắn gọn của bài viết...</p> -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Du lịch Châu Đốc</h5>
+                        <small>Tên: HTung142857</small>
+                        <small>Tên: TTung</small>
+                    </div>
+                    <!-- <p class="mb-1">Nội dung ngắn gọn của bài viết...</p> -->
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Du lịch Long An</h5>
+                        <small>Tên: HTung142857</small>
+                        <small>Tên: Hoang Tung</small>
+                    </div>
+                    <!-- <p class="mb-1">Nội dung ngắn gọn của bài viết...</p> -->
+                </a>
+                <!-- Nội dung chi tiết lịch trình sẽ được thêm vào đây từ JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Approve/Deny Upgrade Request -->
+    <div class="modal-content" id="approveModal">
+        <div class="modal-header">
+            <h5 class="modal-title">Yêu Cầu Nâng Cấp Tài Khoản</h5>
+            <button type="button" class="close" aria-label="Close" onclick="toggleModal('approveModal', false);">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="detailsTable" class="table-responsive" style="max-height: 65vh; overflow-y: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 33%;">Tên</th>
+                            <th style="width: 33%;">Ngày Yêu Cầu</th>
+                            <th style="width: 34%;">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% pendingRequests.forEach(function(request) { %>
+                            <tr>
+                                <td>
+                                    <%= request.Name %>
+                                </td>
+                                <td>
+                                    <%= request.RequestDate.toISOString().slice(0, 10) %>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-sm"
+                                        onclick="showDetails('<%= request.UserID %>')">Xem Chi Tiết</button>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <!-- Additional rows here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="approvalForm" class="modal-body" style="display: none;">
+                <!-- <h5>Xác Nhận Yêu Cầu Nâng Cấp</h5> -->
+                <!-- Nội dung form giống như đã cung cấp trước đây -->
+                <form>
+                    <div class="form-group">
+                        <label>Chuyên Môn</label>
+                        <p id="approveExpertise" class="form-control-static">heklo</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Kinh Nghiệm</label>
+                        <p id="approveExperience" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Giới Tính</label>
+                        <p id="approveGender" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày Sinh</label>
+                        <p id="approveBirthdate" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Số Điện Thoại</label>
+                        <p id="approveContactNumber" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngôn Ngữ</label>
+                        <p id="approveLanguages" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Chứng Chỉ</label>
+                        <p id="approveCertifications" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Giới Thiệu</label>
+                        <p id="approveIntroduction" class="form-control-static"></p>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-secondary" onclick="rejectRequest()">Hủy</button>
+                        <button type="button" class="btn btn-primary" onclick="approveRequest()">Xác Nhận</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Schedule Details -->
+    <div class="modal fade" id="scheduleDetailsModal" tabindex="-1" role="dialog" aria-labelledby="scheduleDetailsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="scheduleDetailsLabel">Lịch Trình</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="itineraryList" class="list-group"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="public/js/admin.js"></script>
+</body>
+
+</html>

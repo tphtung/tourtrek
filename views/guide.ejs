@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân Hướng Dẫn Viên</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="/public/css/guide.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="profile-header text-center fade-in-up">
+            <% if (guide && guide.ProfilePicture) { %>
+                <img src="<%= guide.ProfilePicture %>" class="rounded-circle ml-2"
+                    alt="Avatar của <%= guide.Name %>" style="width: 50px; height: 50px;">
+                <% } else { %>
+                    <i class="fas fa-user-circle" style="font-size: 50px; color: aliceblue;"></i>
+                    <% } %>
+                    <h5 class="mb-0">
+                        <%= guide.Name %>
+                    </h5>
+            <p>Hướng Dẫn Viên Du Lịch</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="profile-info fade-in-up">
+                    <h3>Thông Tin Cá Nhân</h3>
+                    <p><i class="fas fa-envelope"></i> <%= guide.Email %></p>
+                    <p><i class="fas fa-phone"></i><%= guide.ContactNumber %></p>
+                    <p><i class="fas fa-venus-mars"></i> <%= guide.Gender %></p>
+                    <p><i class="fas fa-calendar"></i> <%= new
+                        Date(guide.Birthdate).toLocaleDateString() %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-info fade-in-up">
+                    <h3>Thông Tin Chuyên Môn</h3>
+                    <p><i class="fas fa-user"></i> Ngôn ngữ: <%= guide.Languages %></p>
+                    <p><i class="fas fa-briefcase"></i> Kinh Nghiệm: <%= guide.Expertise %></p>
+                    <p><i class="fas fa-graduation-cap"></i> Chuyên Môn: <%= guide.Experience %></p>
+                </div>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs profile-nav-tabs fade-in-up">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tours"><i class="fas fa-list"></i> Danh Sách
+                    Tour</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#reviews"><i class="fas fa-star"></i> Đánh Giá</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#settings"><i class="fas fa-cog"></i> Cập nhật Tài
+                    Khoản</a>
+            </li>
+        </ul>
+
+        <div class="tab-content profile-content">
+            <div id="tours" class="tab-pane fade show active">
+                <h3>Danh Sách Tour</h3>
+                <ul class="list-group">
+                    <ul class="list-group">
+                        <li class="list-group-item" data-tourid="1"><i class="fas fa-map-marker-alt"></i> Tour 1: Chuyến đi Đà Nẵng</li>
+                        <li class="list-group-item" data-tourid="2"><i class="fas fa-map-marker-alt"></i> Tour 2: Khám phá Hội An cổ kính</li>
+                        <li class="list-group-item" data-tourid="3"><i class="fas fa-map-marker-alt"></i> Tour 3: Dạo quanh Bà Nà Hills</li>
+                        <% if (guide.GuideID === 16) { %>
+                            <li class="list-group-item" data-tourid="4"><i class="fas fa-map-marker-alt"></i> Tour 4: Du lịch Long An</li>
+                        <% } %>
+                    </ul>
+                    
+                </ul>
+                <!-- <button class="btn btn-outline-primary mt-3">Thêm Tour Mới</button> -->
+            </div>
+
+            <div id="reviews" class="tab-pane fade">
+                <h3>Đánh Giá</h3>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Hướng Dẫn Viên Anh Tú - Đà Nẵng</h5>
+                        <p class="card-text">Rất am hiểu về địa điểm, thân thiện và hỗ trợ nhiệt tình. Chuyến đi trở
+                            nên thú vị hơn bao giờ hết!</p>
+                        <div class="text-right">
+                            <span class="badge badge-success">5 sao</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <button class="btn btn-outline-primary">Gửi Đánh Giá</button> -->
+            </div>
+
+            <% if (isOwnProfile) { %>
+            <div id="settings" class="tab-pane fade">
+                <h3>Cập nhật Tài Khoản</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Nhập email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPhone">Số Điện Thoại</label>
+                        <input type="text" class="form-control" id="inputPhone" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLocation">Vị Trí</label>
+                        <input type="text" class="form-control" id="inputLocation" placeholder="Nhập vị trí">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputExperience">Kinh Nghiệm</label>
+                        <input type="text" class="form-control" id="inputExperience" placeholder="Nhập kinh nghiệm">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputExpertise">Chuyên Môn</label>
+                        <input type="text" class="form-control" id="inputExpertise" placeholder="Nhập chuyên môn">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">Cập Nhật Thông Tin</button>
+                </form>
+            </div>
+            <% } %>
+        </div>
+
+
+        <!-- Modal cho chi tiết tour -->
+        <div class="modal fade" id="tourModal" tabindex="-1" role="dialog" aria-labelledby="tourModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tourModalLabel">Chi tiết Tour</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Nội dung chi tiết tour sẽ được thêm vào đây bởi jQuery -->
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="toggleModal(false)">Xóa</button>
+                    <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/public/js/guide.js"></script>
+</body>
+
+</html>
