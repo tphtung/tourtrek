@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.container {
+    width: 900px;
+    /* Adjust as per your requirement */
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+}
+
+.form-container {
+    padding: 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background: #007bff;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-google {
+    background: #db4437;
+}
+
+.btn:not(.btn-google) i {
+    margin-right: 5px;
+}
+
+.form-container {
+    position: relative;
+    /* Thêm thuộc tính này để back-icon được định vị tương đối với form-container */
+    padding-top: 50px;
+    /* Tạo khoảng không phía trên cho icon */
+    /* ... (các style khác giữ nguyên) ... */
+}
+
+.back-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #007bff;
+    position: absolute;
+    top: 10px;
+    /* Đặt 10px từ top container */
+    left: 10px;
+    /* Đặt 10px từ left container */
+}
+
+.image-section {
+    position: relative;
+    /* Đặt position cho phần tử cha */
+    background-image: url('/public/images/logo/logo.png');
+    background-size: 50%;
+    /* Điều chỉnh kích thước logo */
+    background-position: center 30%;
+    /* Điều chỉnh vị trí logo */
+    background-repeat: no-repeat;
+    /* Đảm bảo logo không lặp lại */
+    height: 300px;
+    /* Đặt chiều cao phần tử để có không gian cho chữ */
+}
+
+.logo-text {
+    position: absolute;
+    /* Định vị tuyệt đối so với phần tử cha */
+    width: 100%;
+    /* Chiều rộng bằng với phần tử cha */
+    top: 60%;
+    /* Đặt chữ dưới logo */
+    text-align: center;
+    /* Căn giữa chữ */
+    color: rgb(9, 76, 9);
+    /* Màu chữ trắng */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+    /* Font chữ Arial, sans-serif */
+    font-size: 20px;
+    /* Kích thước font chữ */
+    font-weight: bold;
+    /* In đậm chữ */
+}
+
+
+.switch {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.switch:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles if needed */

@@ -1,0 +1,222 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #007bff;
+    color: white;
+}
+
+.navbar .nav-link {
+    color: white !important;
+}
+
+.footer {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.icon-box {
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.modal-backdrop,
+.modal-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+
+.modal-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    max-height: max-content;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1050;
+    overflow: hidden;
+}
+
+/* Add this to your existing style tag */
+.table {
+    width: 100%;
+    /* Ensures the table stretches to the width of its container */
+    table-layout: fixed;
+    /* Fixes the layout of the table */
+    border-collapse: collapse;
+    /* Removes spacing between cell borders */
+}
+
+.table th,
+.table td {
+    text-align: center;
+    /* Centers the text in the cells */
+    vertical-align: middle;
+    /* Aligns the text vertically in the middle */
+    border: 1px solid #dee2e6;
+    /* Adds border consistent with Bootstrap's styling */
+}
+
+.table thead th {
+    background-color: #e9ecef;
+    /* Gives the header a distinct background */
+    border-bottom: 2px solid #dee2e6;
+    /* Adds a bottom border to header cells */
+}
+
+.modal-header,
+.modal-footer {
+    border-bottom: none;
+    /* Removes the border from the modal header and footer if needed */
+}
+
+.btn-info.btn-sm {
+    padding: 0.25rem 0.5rem;
+    /* Adjusts padding for small buttons */
+}
+
+.btn-back {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-left {
+    margin-right: 5px;
+}
+
+.modal-body tbody {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.modal-body .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.modal-body {
+    max-height: calc(100vh - 200px);
+    /* điều chỉnh giá trị này cho phù hợp */
+    overflow-y: auto;
+    /* tạo scrollbar nếu nội dung vượt quá max-height */
+}
+
+.modal-content .table thead th,
+.modal-content .table tbody td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.modal-content .table thead th {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.modal-content .table tbody td {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-body thead {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    /* Đảm bảo các góc bo của header và footer đồng nhất với modal */
+}
+
+.modal-content .table {
+    margin-bottom: 0;
+    /* Remove margin to align with modal edges */
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    /* Align the text vertically in the middle of the cell */
+    text-align: center;
+    /* Center the text horizontally */
+    padding: .75rem;
+    /* Adjust padding to ensure consistency */
+}
+
+.btn-sm {
+    padding: .25rem .5rem;
+    /* Adjust the button padding if necessary */
+    font-size: .875rem;
+    /* Adjust the button font size if necessary */
+    line-height: 1.5;
+    /* Adjust the button line height if necessary */
+    border-radius: .2rem;
+    /* Adjust the button border radius if necessary */
+}
+
+
+.btn-back {
+    color: white;
+    z-index: 1051;
+}
+
+.close {
+    color: #fff;
+}
+
+.btn-detail {
+    color: blue;
+}
+
+.list-group-item {
+    border: none;
+    /* Loại bỏ border của list-group-item */
+    padding: 10px 20px;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+.modal-footer button {
+    width: 100px;
+    /* Đồng nhất kích thước của các nút */
+}
+
+/* Thêm container cho bảng */
+/* Thiết lập overflow-x để cho phép cuộn ngang */
+.table-container {
+    overflow-y: auto;
+}

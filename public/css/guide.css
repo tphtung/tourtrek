@@ -1,0 +1,120 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    position: relative;
+}
+
+.profile-header {
+    background-color: #007bff;
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.profile-nav-tabs .nav-link.active {
+    border-bottom: 2px solid #007bff;
+}
+
+.profile-content .tab-pane {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.list-group-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-success:hover {
+    background-color: #218838;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.navbar-custom {
+    background-color: #007bff;
+    /* Màu nền navbar */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+    color: #fff;
+    /* Màu chữ cho các item trong navbar */
+}
+
+.navbar-custom .navbar-nav .nav-link .fa {
+    margin-right: 5px;
+    /* Khoảng cách giữa icon và chữ */
+}
+
+.navbar-custom .navbar-nav .nav-item {
+    margin-right: 10px;
+    /* Khoảng cách giữa các item */
+}
+
+.navbar-custom .navbar-nav .dropdown-menu {
+    background-color: #007bff;
+    /* Màu nền cho dropdown menu */
+}
+
+.navbar-custom .navbar-nav .dropdown-menu .dropdown-item {
+    color: #fff;
+    /* Màu chữ cho các item trong dropdown menu */
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* Thay đổi vị trí sang góc dưới bên phải */
+    z-index: 999;
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    color: #0056b3;
+    /* Màu nổi bật */
+}

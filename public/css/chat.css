@@ -1,0 +1,122 @@
+body {
+        background-color: #f8f9fa;
+    }
+    
+    .chat-container {
+        display: flex;
+        height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    }
+    
+    /* Phần bên trái để trống */
+    .left-section {
+        width: 40%;
+        background-color: #f0f0f0; /* Màu nền cho phần bên trái */
+    }
+
+    /* Phần chứa nội dung chat */
+    .right-section {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+    
+    .message-history {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: flex-start; /* Mặc định tin nhắn sẽ bắt đầu từ trái */
+}
+    
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .sent {
+        justify-content: flex-end; /* Tin nhắn gửi sẽ đẩy sang phải */
+    }
+    
+    .received {
+        justify-content: flex-start; /* Tin nhắn nhận sẽ ở bên trái */
+    }
+    
+    .message-info {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sender-name {
+        font-weight: bold;
+    }
+    
+    .message-content {
+        padding: 10px;
+        border-radius: 20px;
+        display: inline-block;
+        max-width: 80%;
+        background-color: #ebebeb; /* Màu cho tin nhắn nhận */
+    }
+    
+    .sent .message-content {
+        background-color: #dcf8c6; /* Màu cho tin nhắn gửi */
+    }
+    
+    .message-time {
+        font-size: 0.75rem;
+        color: #888;
+        align-self: flex-end;
+    }
+    
+    .chat-input {
+        padding: 10px;
+        border-top: 1px solid #f0f0f0; /* Đường viền phân cách */
+    }
+    
+    .tour-form-container {
+        border-right: 2px solid #dee2e6; /* Tạo một đường viền phân cách giữa form và phần chat */
+        padding: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .modal-content {
+        transition: transform .3s ease-out;
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    }
+    
+    .list-group-item i {
+        color: #007bff;  /* Bootstrap primary color */
+    }
+    
+    .modal-header, .modal-footer {
+        border-bottom: none; /* Loại bỏ các đường viền mặc định */
+        border-top: none;
+    }
+    
+    .modal-footer .btn {
+        padding: .375rem .75rem;
+    }
+    
+    .modal-title {
+        font-weight: 600;
+    }
+    
+    .time{
+        display: flex;
+        justify-content: space-between;
+    }

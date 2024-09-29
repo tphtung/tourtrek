@@ -1,0 +1,192 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar-dark.bg-primary,
+.btn-primary,
+.btn-floating {
+    background-color: #007bff !important;
+}
+
+.card {
+    transition: transform .2s;
+}
+
+.form-control{
+    margin-right: 6px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-meta {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.navbar-nav.ml-auto img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-item img {
+    margin-right: 5px;
+}
+
+.btn-floating {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-size: 24px;
+}
+
+.category-filter {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.category-filter button {
+    margin: 0 10px;
+}
+
+/* .comments-section {
+    margin-top: 20px;
+}
+
+.comment {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.comment img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.comment-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.comment-content {
+    margin-left: 10px;
+} */
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comment-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.comment-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-card .comment-content {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.comment-card a {
+    margin-left: 10px;
+}
+
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.icon-input {
+    display: flex;
+    align-items: center;
+}
+
+.icon-input i {
+    margin-right: 8px;
+}
+
+.btn-floating {
+    background-color: white;
+    color: #007bff;
+    /* Màu của icon sẽ là màu xanh tương tự như viền */
+    border-color: #007bff;
+    /* Màu viền */
+    transition: all 0.3s ease;
+}
+
+.btn-floating:hover {
+    background-color: #007bff;
+    /* Thay đổi màu nền khi hover */
+    color: white;
+    /* Thay đổi màu icon khi hover */
+}
+
+.post-options {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.card {
+    position: relative;
+    padding-right: 30px; /* Để chừa chỗ cho nút dropdown */
+}
+
+
+.btn-custom {
+    background-color: white;
+    color: #e9edf1;
+    /* This will be the color of the icon */
+    border: 2px solid #007bff;
+    /* Blue border */
+    padding: 0.75rem 1.5rem;
+    /* Larger padding for a larger button */
+    font-size: 1rem;
+    /* Larger font size for the icon and text */
+    border-radius: 0.5rem;
+    /* Rounded corners for the button */
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #007bff;
+    /* Blue background on hover */
+    color: white;
+    /* White text on hover */
+}
